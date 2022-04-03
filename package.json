@@ -1,0 +1,26 @@
+{
+  "name": "tienda-online-backend",
+  "version": "1.0.0",
+  "description": "Código fuente de tienda online.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/veronicanicoll97/tienda-online-backend.git"
+  },
+  "author": "Veronica Dominguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/veronicanicoll97/tienda-online-backend/issues"
+  },
+  "homepage": "https://github.com/veronicanicoll97/tienda-online-backend#readme",
+  "dependencies": {
+    "apollo-server": "^3.6.7",
+    "graphql": "^16.3.0"
+  },
+  "devDependencies": {
+    "prisma": "^3.11.1"
+  }
+}

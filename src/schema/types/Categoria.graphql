@@ -1,0 +1,14 @@
+type Categoria {
+    """
+    Identificador de la categoria en BD.
+    """
+    id: ID!
+    """
+    Nombre de la categoria.
+    """
+    nombre: String!
+    """
+    Fecha de inserción de la categoria.
+    """
+    fechaInsercion: DateTime!
+}

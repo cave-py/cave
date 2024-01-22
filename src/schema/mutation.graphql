@@ -1,0 +1,16 @@
+extend type Mutation {
+    """
+    Crea una nueva categoria en BD. 
+    Sólo se recibe el nombre.
+    """
+    insertarCategoria(
+        input: InsertarCategoriaInput
+    ): String!
+
+    """
+    Crea una nuevo producto.
+    """
+    insertarProducto(
+        input: InsertarProductoInput
+    ): String!
+}

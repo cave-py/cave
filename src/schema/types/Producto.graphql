@@ -1,0 +1,26 @@
+type Producto {
+    """
+    Identificador del producto en BD.
+    """
+    id: ID!
+    """
+    Nomrbe del producto.
+    """
+    nombre: String!
+    """
+    Precio del producto.
+    """
+    precio: Float!
+    """
+    Categoria asociada al producto.
+    """
+    categoria: Categoria!
+    """
+    Fecha de inserción del producto.
+    """
+    fechaInsercion: DateTime!
+    """
+    Fecha de actualización del producto.
+    """
+    fechaActualizacion: DateTime
+}

@@ -1,0 +1,6 @@
+input InsertarCategoriaInput {
+    """
+    Categoria a ser insertada.
+    """
+    categoria: CategoriaInput!
+}

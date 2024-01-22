@@ -1,0 +1,11 @@
+extend type Query {
+    """
+    Obtiene la categoria a partir de su identificador
+    """
+    categoria(input: CategoriaInput): Categoria!
+
+    """
+    Listado de categorias en BD.
+    """
+    categorias: [Categoria!]!
+}

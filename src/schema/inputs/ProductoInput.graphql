@@ -1,0 +1,6 @@
+input ProductoInput {
+    id: ID
+    nombre: String
+    precio: Float
+    categoria: CategoriaInput
+}

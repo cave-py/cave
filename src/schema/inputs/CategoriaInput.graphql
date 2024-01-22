@@ -1,0 +1,4 @@
+input CategoriaInput {
+    id: ID
+    nombre: String
+}

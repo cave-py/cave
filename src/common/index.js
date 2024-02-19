@@ -1,2 +1,2 @@
 exports.getTypeDefs = require('./getTypeDefs');
-exports.log = require('./log')
+exports.log = require('./log');

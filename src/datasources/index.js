@@ -1,2 +1,2 @@
-exports.CategoriaDataSource = require('./CategoriaDataSource')
-exports.ProductoDataSource = require('./ProductoDataSource')
+exports.CategoriaDataSource = require('./CategoriaDataSource');
+exports.ProductoDataSource = require('./ProductoDataSource');

@@ -8,4 +8,14 @@ extend type Query {
     Listado de categorias en BD.
     """
     categorias: [Categoria!]!
+
+    """
+    Listado de productos
+    """
+    productos: [Producto!]!
+
+    """
+    Obtiene un solo producto a partir de su identificador.
+    """
+    producto(input: ProductoInput): Producto!
 }

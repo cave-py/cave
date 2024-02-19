@@ -1,59 +1,74 @@
-const RootDataSource =  require('./RootDataSource');
+const RootDataSource = require('./RootDataSource');
 
 class CategoriaDataSource extends RootDataSource {
     constructor(clientePg, log) {
-        super(clientePg, log)
+        super(clientePg, log);
     }
 
     async obtenerCategoriaPorId(idCategoria) {
         try {
-            this.log.info('Inicio de la función -> CategoriaDataSource.obtenerCategoriaPorId()')
+            this.log.info(
+                'Inicio de la función -> CategoriaDataSource.obtenerCategoriaPorId()',
+            );
             const respuestaBD = await this.clientePg.query(
                 `SELECT id, nombre, fecha_insercion "fechaInsercion" FROM producto.categorias WHERE id = $1`,
-                [Number(idCategoria)]
+                [Number(idCategoria)],
             );
-            this.log.debug('Categoria obtenida: ' + JSON.stringify(respuestaBD.rows))
-            return respuestaBD.rows[0];
+            this.log.debug(
+                'Categoria obtenida: ' + JSON.stringify(respuestaBD.rows[0]),
+            );
+            return !respuestaBD.rows[0] ? new Object() : respuestaBD.rows[0];
         } catch (error) {
-            this.log.error(error)
+            this.log.error(error);
         } finally {
-            this.log.info('Fin de la función -> CategoriaDataSource.obtenerCategoriaPorId()')
+            this.log.info(
+                'Fin de la función -> CategoriaDataSource.obtenerCategoriaPorId()',
+            );
         }
     }
 
-
     async insertarCategoria(nombre) {
         try {
-            this.log.info('Inicio de la función -> CategoriaDataSource.insertarCategoria()')
-            const respuestaBD = await this.clientePg.query( 
-                `INSERT INTO producto.categorias (nombre) VALUES ($1) RETURNING id`,
-                [nombre]
+            this.log.info(
+                'Inicio de la función -> CategoriaDataSource.insertarCategoria()',
             );
-            this.log.debug('Categoria insertada: ' + JSON.stringify(respuestaBD.rows))
-            return "Se ha insertado la categoria N° " + respuestaBD.rows[0].id;
+            const respuestaBD = await this.clientePg.query(
+                `INSERT INTO producto.categorias (nombre) VALUES ($1) RETURNING id`,
+                [nombre],
+            );
+            this.log.debug(
+                'Categoria insertada: ' + JSON.stringify(respuestaBD.rows),
+            );
+            return 'Se ha insertado la categoria N° ' + respuestaBD.rows[0].id;
         } catch (error) {
-            this.log.error(error)
+            this.log.error(error);
         } finally {
-            this.log.info('Fin de la función -> CategoriaDataSource.insertarCategoria()')
-        }        
+            this.log.info(
+                'Fin de la función -> CategoriaDataSource.insertarCategoria()',
+            );
+        }
     }
-
 
     async obtenerListadoDeCategorias() {
         try {
-            this.log.info('Inicio de la función -> CategoriaDataSource.obtenerListadoDeCategorias()')
+            this.log.info(
+                'Inicio de la función -> CategoriaDataSource.obtenerListadoDeCategorias()',
+            );
             const respuestaBD = await this.clientePg.query(
                 `SELECT id, nombre, fecha_insercion "fechaInsercion" FROM producto.categorias`,
             );
-            this.log.debug('Listadode categorias: ' + JSON.stringify(respuestaBD.rows))
+            this.log.debug(
+                'Listadode categorias: ' + JSON.stringify(respuestaBD.rows),
+            );
             return respuestaBD.rows;
         } catch (error) {
-            this.log.error(error)
+            this.log.error(error);
         } finally {
-            this.log.info('Fin de la función -> CategoriaDataSource.obtenerListadoDeCategorias()')
-        }        
+            this.log.info(
+                'Fin de la función -> CategoriaDataSource.obtenerListadoDeCategorias()',
+            );
+        }
     }
 }
 
-
-module.exports = CategoriaDataSource
+module.exports = CategoriaDataSource;

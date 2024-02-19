@@ -1,9 +1,7 @@
-
-
 class RootDataSource {
     constructor(clientePg, log) {
         this.clientePg = clientePg;
-        this.log = log
+        this.log = log;
     }
 }
 
